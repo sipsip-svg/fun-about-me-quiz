@@ -4,33 +4,29 @@ st.set_page_config(
     page_title="Fun About Me Quiz",
     page_icon="🎉"
 )
-# 🎨 Custom colours and design
+
+# 🎨 Custom colours and design (CSS moved inside the style tags)
 st.markdown(
     """
     <style>
     .stApp {
         background: linear-gradient(135deg, #ffe6f7, #e6f7ff, #eee6ff);
     }
+    h1 {
+        color: #8e44ad;
+        text-align: center;
+        font-size: 45px;
+    }
+    h2, h3 {
+        color: #e84393;
+    }
+    p, label {
+        color: #2d3436;
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
-
-h1 {
-    color: #8e44ad;
-    text-align: center;
-    font-size: 45px;
-}
-
-h2, h3 {
-    color: #e84393;
-}
-
-p, label {
-    color: #2d3436;
-}
-
-/* Buttons */
 
 # Keep answers while moving between pages
 if "page" not in st.session_state:
@@ -339,32 +335,31 @@ elif st.session_state.page == 6:
 
     st.divider()
 
+    if st.button("🚀 COMPLETE THE MISSION"):
+        # Safely fetch the name or default to 'Earthling' if left blank
+        name = st.session_state.answers.get("Name", "").strip() or "Earthling"
 
-if st.button("🚀 COMPLETE THE MISSION"):
+        st.balloons()
 
-    name = st.session_state.answers["Name"]
+        st.success(f"Thank you for assisting me, {name}! 😚")
 
-    st.balloons()
+        st.header("🌎 THE TRUTH HAS BEEN REVEALED...")
 
-    st.success(f"Thank you for assisting me, {name}! 😚")
+        st.write(f"Hello {name}... 👽")
+        st.write("I am actually an alien sent to Earth on a secret mission. 👾")
+        st.write("My mission was to gather information about humans before beginning my plan to take over the world. 🌎👽")
+        st.write(f"And thanks to YOU, {name}, I now have everything I need!")
+        st.write("🚀 MISSION STATUS: COMPLETE")
+        st.write(f"Thank you for assisting me, {name}. 😚")
+        st.write("But I'll let you survive... since I like you so much. 😚👽👾")
+        st.write("Don't tell the other aliens! 🤫")
 
-    st.header("🌎 THE TRUTH HAS BEEN REVEALED...")
+        st.divider()
 
-    st.write(f"Hello {name}... 👽")
-    st.write("I am actually an alien sent to Earth on a secret mission. 👾")
-    st.write("My mission was to gather information about humans before beginning my plan to take over the world. 🌎👽")
-    st.write(f"And thanks to YOU, {name}, I now have everything I need!")
-    st.write("🚀 MISSION STATUS: COMPLETE")
-    st.write(f"Thank you for assisting me, {name}. 😚")
-    st.write("But I'll let you survive... since I like you so much. 😚👽👾")
-    st.write("Don't tell the other aliens! 🤫")
+        st.header("💐 A LITTLE GIFT FOR YOU 💐")
+        st.write("🌹 🌷 🌸 🌺 🌻 🌼 🌹 🌷 🌸")
+        st.write(f"💐 These flowers are for you, {name}! 💐")
+        st.write("From your favourite alien 👽❤️")
 
-    st.divider()
-
-    st.header("💐 A LITTLE GIFT FOR YOU 💐")
-    st.write("🌹 🌷 🌸 🌺 🌻 🌼 🌹 🌷 🌸")
-    st.write(f"💐 These flowers are for you, {name}! 💐")
-    st.write("From your favourite alien 👽❤️")
-
-    st.balloons()
+        st.balloons()
 
