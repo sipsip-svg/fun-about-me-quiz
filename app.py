@@ -346,8 +346,7 @@ if st.button("🚀 COMPLETE THE MISSION"):
     st.header("🌎 THE TRUTH HAS BEEN REVEALED...")
 
     st.write(
-        f"""
-👽 Hello {name}...
+        f""" 👽 Hello {name}...
 
 I am actually an alien sent to Earth on a secret mission. 👾
 
