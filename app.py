@@ -4,6 +4,29 @@ st.set_page_config(
     page_title="Fun About Me Quiz",
     page_icon="🎉"
 )
+# 🎨 Custom colours and design
+st.markdown("""
+<style>
+
+.stApp {
+    background: linear-gradient(135deg, #ffe6f7, #e6f7ff, #eee6ff);
+}
+
+h1 {
+    color: #8e44ad;
+    text-align: center;
+    font-size: 45px;
+}
+
+h2, h3 {
+    color: #e84393;
+}
+
+p, label {
+    color: #2d3436;
+}
+
+/* Buttons */
 
 # Keep answers while moving between pages
 if "page" not in st.session_state:
