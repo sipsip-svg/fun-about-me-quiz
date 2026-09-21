@@ -335,6 +335,7 @@ elif st.session_state.page == 6:
 
     st.divider()
 
+
 if st.button("🚀 COMPLETE THE MISSION"):
 
     name = st.session_state.answers["Name"]
@@ -343,45 +344,23 @@ if st.button("🚀 COMPLETE THE MISSION"):
 
     st.success(f"Thank you for assisting me, {name}! 😚")
 
-    st.header("THE TRUTH HAS BEEN REVEALED...")
+    st.header("🌎 THE TRUTH HAS BEEN REVEALED...")
 
-    st.write(
-        f"""
-Hello {name}...
-
-I am actually an alien sent to Earth on a secret mission.
-
-My mission was to gather information about humans before
-beginning my plan to take over the world.
-
-And thanks to YOU, {name}, I now have everything I need!
-
-MISSION STATUS: COMPLETE
-
-Thank you for assisting me, {name}. 😚
-
-But I'll let you survive... since I like you so much. 😚
-
-Don't tell the other aliens! 🤫
-"""
-    )
+    st.write(f"Hello {name}... 👽")
+    st.write("I am actually an alien sent to Earth on a secret mission. 👾")
+    st.write("My mission was to gather information about humans before beginning my plan to take over the world. 🌎👽")
+    st.write(f"And thanks to YOU, {name}, I now have everything I need!")
+    st.write("🚀 MISSION STATUS: COMPLETE")
+    st.write(f"Thank you for assisting me, {name}. 😚")
+    st.write("But I'll let you survive... since I like you so much. 😚👽👾")
+    st.write("Don't tell the other aliens! 🤫")
 
     st.divider()
 
-    st.header("A LITTLE GIFT FOR YOU")
-
+    st.header("💐 A LITTLE GIFT FOR YOU 💐")
     st.write("🌹 🌷 🌸 🌺 🌻 🌼 🌹 🌷 🌸")
-
-    st.markdown(
-        f"""
-### These flowers are for you, {name}! 💐
-
-🌹 🌷 🌸 🌺 🌻 🌼 🌹
-
-From your favourite alien 👽❤️
-"""
-    )
+    st.write(f"💐 These flowers are for you, {name}! 💐")
+    st.write("From your favourite alien 👽❤️")
 
     st.balloons()
-
 
