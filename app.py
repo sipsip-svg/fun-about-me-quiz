@@ -488,6 +488,9 @@ elif st.session_state.page == 6:
 import streamlit as st
 import streamlit.components.v1 as components
 
+import streamlit as st
+import streamlit.components.v1 as components
+
 if st.button("🚀 COMPLETE THE MISSION"):
     name = st.session_state.answers.get("Name", "").strip() or "Earthling"
 
@@ -511,7 +514,7 @@ if st.button("🚀 COMPLETE THE MISSION"):
     st.header("🧸 A LITTLE GIFT FOR YOU 🧸")
     st.write("From your favourite alien 👽❤️")
     
-    # Clean HTML/SVG block rendered cleanly using components
+    # Notice: NO 'f' before the opening triple-quotes!
     animated_svg_html = """
     <div style="text-align: center; display: flex; justify-content: center; align-items: center; background: transparent;">
         <svg width="300" height="340" viewBox="0 0 300 360" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -616,7 +619,6 @@ if st.button("🚀 COMPLETE THE MISSION"):
     </div>
     """
     
-    # Display the component
     components.html(animated_svg_html, height=360)
 
     st.markdown(
@@ -629,4 +631,3 @@ if st.button("🚀 COMPLETE THE MISSION"):
     )
 
     st.snow()
-    st.balloons()
