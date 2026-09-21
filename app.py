@@ -341,3 +341,22 @@ But I'll let you survive... since I like you so much. 😚👽👾
 
 Don't tell the other aliens! 🤫
 """
+        )
+
+    st.divider()
+
+    st.header("💐 A LITTLE GIFT FOR YOU 💐")
+
+    st.write("🌹 🌷 🌸 🌺 🌻 🌼 🌹 🌷 🌸")
+
+    st.markdown(
+        f"""
+        ### 💐 These flowers are for you, {name}! 💐
+
+        🌹 🌷 🌸 🌺 🌻 🌼 🌹
+
+        From your favourite alien 👽❤️
+        """
+    )
+
+    st.balloons()
