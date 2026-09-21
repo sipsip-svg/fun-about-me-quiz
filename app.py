@@ -5,12 +5,16 @@ st.set_page_config(
     page_icon="🎉"
 )
 # 🎨 Custom colours and design
-st.markdown("""
-<style>
-
-.stApp {
-    background: linear-gradient(135deg, #ffe6f7, #e6f7ff, #eee6ff);
-}
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background: linear-gradient(135deg, #ffe6f7, #e6f7ff, #eee6ff);
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 h1 {
     color: #8e44ad;
