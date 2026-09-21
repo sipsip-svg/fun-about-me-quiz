@@ -485,60 +485,148 @@ elif st.session_state.page == 6:
                     
                     <!-- Smile -->
                     <path d="M 140 135 Q 150 148 160 135" stroke="#38ef7d" stroke-width="3.5" stroke-linecap="round" fill="none" />
+import streamlit as st
+import streamlit.components.v1 as components
 
-                    <!-- Alien Arms -->
-                    <path d="M 118 170 Q 130 220 135 220" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" fill="none" />
-                    <path d="M 182 170 Q 170 220 165 220" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" fill="none" />
+if st.button("🚀 COMPLETE THE MISSION"):
+    name = st.session_state.answers.get("Name", "").strip() or "Earthling"
 
-                    <!-- Wiggling Teddy Bear -->
-                    <g class="teddy-group">
-                        <!-- Ears -->
-                        <circle cx="125" cy="185" r="14" fill="#b45309" stroke="#78350f" stroke-width="2" />
-                        <circle cx="125" cy="185" r="8" fill="#fde68a" />
-                        <circle cx="175" cy="185" r="14" fill="#b45309" stroke="#78350f" stroke-width="2" />
-                        <circle cx="175" cy="185" r="8" fill="#fde68a" />
+    st.balloons()
 
-                        <!-- Body & Legs -->
-                        <ellipse cx="150" cy="235" rx="28" ry="32" fill="#d97706" stroke="#78350f" stroke-width="2" />
-                        <ellipse cx="130" cy="262" rx="10" ry="8" fill="#b45309" />
-                        <ellipse cx="170" cy="262" rx="10" ry="8" fill="#b45309" />
+    st.success(f"Thank you for assisting me, {name}! 😚")
 
-                        <!-- Head -->
-                        <circle cx="150" cy="202" r="26" fill="#d97706" stroke="#78350f" stroke-width="2" />
-                        <ellipse cx="150" cy="208" rx="11" ry="9" fill="#fde68a" />
-                        <ellipse cx="150" cy="204" rx="4" ry="3" fill="#451a03" />
-                        <path d="M 150 207 L 150 211 M 147 212 Q 150 215 153 212" stroke="#451a03" stroke-width="1.5" stroke-linecap="round" fill="none" />
+    st.header("🌎 THE TRUTH HAS BEEN REVEALED...")
 
-                        <!-- Eyes -->
-                        <circle cx="140" cy="198" r="3" fill="#1e1b4b" />
-                        <circle cx="160" cy="198" r="3" fill="#1e1b4b" />
-                        <circle cx="141" cy="197" r="1" fill="#ffffff" />
-                        <circle cx="161" cy="197" r="1" fill="#ffffff" />
+    st.write(f"Hello {name}... 👽")
+    st.write("I am actually an alien sent to Earth on a secret mission. 👾")
+    st.write("My mission was to gather information about humans before beginning my plan to take over the world. 🌎👽")
+    st.write(f"And thanks to YOU, {name}, I now have everything I need!")
+    st.write("🚀 MISSION STATUS: COMPLETE")
+    st.write(f"Thank you for assisting me, {name}. 😚")
+    st.write("But I'll let you survive... since I like you so much. 😚👽👾")
+    st.write("Don't tell the other aliens! 🤫")
 
-                        <!-- Belly & Bowtie -->
-                        <ellipse cx="150" cy="238" rx="16" ry="18" fill="#fde68a" />
-                        <path d="M 143 218 L 150 222 L 143 226 Z M 157 218 L 150 222 L 157 226 Z" fill="#f43f5e" />
-                        <circle cx="150" cy="222" r="2" fill="#9f1239" />
-                    </g>
+    st.divider()
+
+    st.header("🧸 A LITTLE GIFT FOR YOU 🧸")
+    st.write("From your favourite alien 👽❤️")
+    
+    # Clean HTML/SVG block rendered cleanly using components
+    animated_svg_html = """
+    <div style="text-align: center; display: flex; justify-content: center; align-items: center; background: transparent;">
+        <svg width="300" height="340" viewBox="0 0 300 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <style>
+                .alien-group {
+                    animation: float 3s ease-in-out infinite;
+                    transform-origin: center;
+                }
+                .teddy-group {
+                    animation: wiggle 2s ease-in-out infinite;
+                    transform-origin: 150px 225px;
+                }
+                .glow-bg {
+                    animation: pulse 2.5s ease-in-out infinite alternate;
+                    transform-origin: center;
+                }
+                .alien-eye {
+                    animation: blink 4s infinite;
+                    transform-origin: 150px 95px;
+                }
+                .star {
+                    animation: sparkle 1.5s ease-in-out infinite alternate;
+                }
+
+                @keyframes float {
+                    0% { transform: translateY(0px); }
+                    50% { transform: translateY(-12px); }
+                    100% { transform: translateY(0px); }
+                }
+                @keyframes wiggle {
+                    0% { transform: rotate(0deg); }
+                    25% { transform: rotate(-4deg); }
+                    75% { transform: rotate(4deg); }
+                    100% { transform: rotate(0deg); }
+                }
+                @keyframes pulse {
+                    0% { opacity: 0.2; transform: scale(0.95); }
+                    100% { opacity: 0.6; transform: scale(1.1); }
+                }
+                @keyframes blink {
+                    0%, 90%, 100% { transform: scaleY(1); }
+                    95% { transform: scaleY(0.1); }
+                }
+                @keyframes sparkle {
+                    0% { opacity: 0.3; transform: scale(0.8); }
+                    100% { opacity: 1; transform: scale(1.2); }
+                }
+            </style>
+
+            <!-- Glow -->
+            <circle class="glow-bg" cx="150" cy="180" r="110" fill="#a855f7" filter="blur(25px)" />
+            <circle class="glow-bg" cx="150" cy="225" r="50" fill="#38ef7d" filter="blur(20px)" />
+
+            <!-- Floating Alien & Teddy Group -->
+            <g class="alien-group">
+                <!-- Alien Head & Body -->
+                <ellipse cx="150" cy="100" rx="52" ry="62" fill="#8b5cf6" stroke="#c084fc" stroke-width="3" />
+                <path d="M 128 155 L 108 270 L 192 270 L 172 155 Z" fill="#6d28d9" stroke="#a855f7" stroke-width="3" />
+                
+                <!-- Alien Eyes -->
+                <g class="alien-eye">
+                    <ellipse cx="130" cy="95" rx="17" ry="23" fill="#030108" transform="rotate(-15 130 95)" />
+                    <ellipse cx="170" cy="95" rx="17" ry="23" fill="#030108" transform="rotate(15 170 95)" />
+                    <circle cx="125" cy="88" r="5" fill="#00f2fe" />
+                    <circle cx="165" cy="88" r="5" fill="#00f2fe" />
                 </g>
+                
+                <!-- Smile -->
+                <path d="M 140 135 Q 150 148 160 135" stroke="#38ef7d" stroke-width="3.5" stroke-linecap="round" fill="none" />
 
-                <!-- Sparkles / Stars -->
-                <path class="star" d="M 80 100 L 82 105 L 87 107 L 82 109 L 80 114 L 78 109 L 73 107 L 78 105 Z" fill="#38ef7d" />
-                <path class="star" d="M 220 110 L 222 115 L 227 117 L 222 119 L 220 124 L 218 119 L 213 117 L 218 115 Z" fill="#00f2fe" />
-                <path class="star" d="M 90 250 L 91 253 L 94 254 L 91 255 L 90 258 L 89 255 L 86 254 L 89 253 Z" fill="#fef08a" />
-            </svg>
-        </div>
-        """
-        
-        st.markdown(animated_alien_svg, unsafe_allow_html=True)
-        
-        st.markdown(
-            f"""
-            <p style="text-align: center; color: #38ef7d !important; font-weight: bold; font-size: 20px; margin-top: 10px;">
-                🧸 This teddy bear is for you, {name}! 🧸
-            </p>
-            """,
-            unsafe_allow_html=True
-        )
+                <!-- Arms -->
+                <path d="M 118 170 Q 130 220 135 220" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" fill="none" />
+                <path d="M 182 170 Q 170 220 165 220" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" fill="none" />
 
-        st.balloons()
+                <!-- Wiggling Teddy Bear -->
+                <g class="teddy-group">
+                    <circle cx="125" cy="185" r="14" fill="#b45309" stroke="#78350f" stroke-width="2" />
+                    <circle cx="125" cy="185" r="8" fill="#fde68a" />
+                    <circle cx="175" cy="185" r="14" fill="#b45309" stroke="#78350f" stroke-width="2" />
+                    <circle cx="175" cy="185" r="8" fill="#fde68a" />
+                    <ellipse cx="150" cy="235" rx="28" ry="32" fill="#d97706" stroke="#78350f" stroke-width="2" />
+                    <ellipse cx="130" cy="262" rx="10" ry="8" fill="#b45309" />
+                    <ellipse cx="170" cy="262" rx="10" ry="8" fill="#b45309" />
+                    <circle cx="150" cy="202" r="26" fill="#d97706" stroke="#78350f" stroke-width="2" />
+                    <ellipse cx="150" cy="208" rx="11" ry="9" fill="#fde68a" />
+                    <ellipse cx="150" cy="204" rx="4" ry="3" fill="#451a03" />
+                    <path d="M 150 207 L 150 211 M 147 212 Q 150 215 153 212" stroke="#451a03" stroke-width="1.5" stroke-linecap="round" fill="none" />
+                    <circle cx="140" cy="198" r="3" fill="#1e1b4b" />
+                    <circle cx="160" cy="198" r="3" fill="#1e1b4b" />
+                    <circle cx="141" cy="197" r="1" fill="#ffffff" />
+                    <circle cx="161" cy="197" r="1" fill="#ffffff" />
+                    <ellipse cx="150" cy="238" rx="16" ry="18" fill="#fde68a" />
+                    <path d="M 143 218 L 150 222 L 143 226 Z M 157 218 L 150 222 L 157 226 Z" fill="#f43f5e" />
+                    <circle cx="150" cy="222" r="2" fill="#9f1239" />
+                </g>
+            </g>
+
+            <!-- Sparkles -->
+            <path class="star" d="M 70 90 L 72 95 L 77 97 L 72 99 L 70 104 L 68 99 L 63 97 L 68 95 Z" fill="#38ef7d" />
+            <path class="star" d="M 230 100 L 232 105 L 237 107 L 232 109 L 230 114 L 228 109 L 223 107 L 228 105 Z" fill="#00f2fe" />
+        </svg>
+    </div>
+    """
+    
+    # Display the component
+    components.html(animated_svg_html, height=360)
+
+    st.markdown(
+        f"""
+        <p style="text-align: center; color: #38ef7d !important; font-weight: bold; font-size: 20px; margin-top: 10px;">
+            🧸 This teddy bear is for you, {name}! 🧸
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.snow()
+    st.balloons()
