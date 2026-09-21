@@ -387,108 +387,7 @@ elif st.session_state.page == 6:
 
     st.divider()
 
-    if st.button("🚀 COMPLETE THE MISSION"):
-        name = st.session_state.answers.get("Name", "").strip() or "Earthling"
-
-        st.balloons()
-
-        st.success(f"Thank you for assisting me, {name}! 😚")
-
-        st.header("🌎 THE TRUTH HAS BEEN REVEALED...")
-
-        st.write(f"Hello {name}... 👽")
-        st.write("I am actually an alien sent to Earth on a secret mission. 👾")
-        st.write("My mission was to gather information about humans before beginning my plan to take over the world. 🌎👽")
-        st.write(f"And thanks to YOU, {name}, I now have everything I need!")
-        st.write("🚀 MISSION STATUS: COMPLETE")
-        st.write(f"Thank you for assisting me, {name}. 😚")
-        st.write("But I'll let you survive... since I like you so much. 😚👽👾")
-        st.write("Don't tell the other aliens! 🤫")
-
-        st.divider()
-
-        st.header("🧸 A LITTLE GIFT FOR YOU 🧸")
-        st.write("From your favourite alien 👽❤️")
-        
-        # Enhanced & Animated SVG Image
-        animated_alien_svg = f"""
-        <div style="text-align: center; margin-top: 20px;">
-            <svg width="320" height="380" viewBox="0 0 300 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                    /* Floating alien animation */
-                    .alien-group {{
-                        animation: float 3s ease-in-out infinite;
-                        transform-origin: center;
-                    }}
-                    /* Wiggling Teddy Bear animation */
-                    .teddy-group {{
-                        animation: wiggle 2s ease-in-out infinite;
-                        transform-origin: 150px 225px;
-                    }}
-                    /* Pulsing background glow */
-                    .glow-bg {{
-                        animation: pulse 2.5s ease-in-out infinite alternate;
-                        transform-origin: center;
-                    }}
-                    /* Blinking eyes */
-                    .alien-eye {{
-                        animation: blink 4s infinite;
-                        transform-origin: 150px 95px;
-                    }}
-                    /* Twinkling stars */
-                    .star {{
-                        animation: sparkle 1.5s ease-in-out infinite alternate;
-                    }}
-
-                    @keyframes float {{
-                        0% {{ transform: translateY(0px); }}
-                        50% {{ transform: translateY(-10px); }}
-                        100% {{ transform: translateY(0px); }}
-                    }}
-                    @keyframes wiggle {{
-                        0% {{ transform: rotate(0deg); }}
-                        25% {{ transform: rotate(-3deg); }}
-                        75% {{ transform: rotate(3deg); }}
-                        100% {{ transform: rotate(0deg); }}
-                    }}
-                    @keyframes pulse {{
-                        0% {{ opacity: 0.2; transform: scale(0.95); }}
-                        100% {{ opacity: 0.5; transform: scale(1.1); }}
-                    }}
-                    @keyframes blink {{
-                        0%, 90%, 100% {{ transform: scaleY(1); }}
-                        95% {{ transform: scaleY(0.1); }}
-                    }}
-                    @keyframes sparkle {{
-                        0% {{ opacity: 0.3; transform: scale(0.8); }}
-                        100% {{ opacity: 1; transform: scale(1.2); }}
-                    }}
-                </style>
-
-                <!-- Pulsing Background Glow -->
-                <circle class="glow-bg" cx="150" cy="180" r="110" fill="#a855f7" filter="blur(30px)" />
-                <circle class="glow-bg" cx="150" cy="225" r="50" fill="#38ef7d" filter="blur(20px)" />
-
-                <!-- Floating Group: Alien & Teddy -->
-                <g class="alien-group">
-                    <!-- Alien Body & Head -->
-                    <ellipse cx="150" cy="100" rx="52" ry="62" fill="#8b5cf6" stroke="#c084fc" stroke-width="3" />
-                    <path d="M 128 155 L 108 270 L 192 270 L 172 155 Z" fill="#6d28d9" stroke="#a855f7" stroke-width="3" />
-                    
-                    <!-- Alien Eyes with Blink Effect -->
-                    <g class="alien-eye">
-                        <ellipse cx="130" cy="95" rx="17" ry="23" fill="#030108" transform="rotate(-15 130 95)" />
-                        <ellipse cx="170" cy="95" rx="17" ry="23" fill="#030108" transform="rotate(15 170 95)" />
-                        <circle cx="125" cy="88" r="5" fill="#00f2fe" />
-                        <circle cx="165" cy="88" r="5" fill="#00f2fe" />
-                    </g>
-                    
-                    <!-- Smile -->
-                    <path d="M 140 135 Q 150 148 160 135" stroke="#38ef7d" stroke-width="3.5" stroke-linecap="round" fill="none" />
-import streamlit as st
-import streamlit.components.v1 as components
-
-import streamlit as st
+    import streamlit as st
 import streamlit.components.v1 as components
 
 if st.button("🚀 COMPLETE THE MISSION"):
@@ -514,7 +413,7 @@ if st.button("🚀 COMPLETE THE MISSION"):
     st.header("🧸 A LITTLE GIFT FOR YOU 🧸")
     st.write("From your favourite alien 👽❤️")
     
-    # Notice: NO 'f' before the opening triple-quotes!
+    # ⚠️ CRITICAL: Notice there is NO 'f' before the opening triple quotes!
     animated_svg_html = """
     <div style="text-align: center; display: flex; justify-content: center; align-items: center; background: transparent;">
         <svg width="300" height="340" viewBox="0 0 300 360" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -619,6 +518,7 @@ if st.button("🚀 COMPLETE THE MISSION"):
     </div>
     """
     
+    # Render with Streamlit components
     components.html(animated_svg_html, height=360)
 
     st.markdown(
