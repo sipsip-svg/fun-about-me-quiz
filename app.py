@@ -335,21 +335,21 @@ elif st.session_state.page == 6:
 
     st.divider()
 
-    if st.button("🚀 COMPLETE THE MISSION"):
+            if st.button("🚀 COMPLETE THE MISSION"):
 
     name = st.session_state.answers["Name"]
 
     st.balloons()
 
-    st.success(f"👽 Thank you for assisting me, {name}!")
+    st.success(f"👽 Thank you for assisting me, {name}! 😚")
 
     st.header("🌎 THE TRUTH HAS BEEN REVEALED...")
 
     st.write(
-    f"""
+        f"""
 👽 Hello {name}...
 
-I am actually an alien sent to Earth on a secret mission.
+I am actually an alien sent to Earth on a secret mission. 👾
 
 My mission was to gather information about humans before
 beginning my plan to take over the world. 🌎👽
@@ -364,7 +364,7 @@ But I'll let you survive... since I like you so much. 😚👽👾
 
 Don't tell the other aliens! 🤫
 """
-        )
+    )
 
     st.divider()
 
@@ -374,12 +374,12 @@ Don't tell the other aliens! 🤫
 
     st.markdown(
         f"""
-        ### 💐 These flowers are for you, {name}! 💐
+### 💐 These flowers are for you, {name}! 💐
 
-        🌹 🌷 🌸 🌺 🌻 🌼 🌹
+🌹 🌷 🌸 🌺 🌻 🌼 🌹
 
-        From your favourite alien 👽❤️
-        """
+From your favourite alien 👽❤️
+"""
     )
 
     st.balloons()
