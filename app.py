@@ -312,10 +312,32 @@ elif st.session_state.page == 6:
 
     st.divider()
 
-    if st.button("🎉 SUBMIT ANSWERS"):
+    if st.button("🚀 COMPLETE THE MISSION"):
 
-        st.success("🎉 Thank you for completing the quiz!")
+    name = st.session_state.answers["Name"]
 
-        st.write("Your answers have been received.")
+    st.balloons()
 
-        st.balloons()
+    st.success(f"👽 Thank you for assisting me, {name}!")
+
+    st.header("🌎 THE TRUTH HAS BEEN REVEALED...")
+
+    st.write(
+    f"""
+👽 Hello {name}...
+
+I am actually an alien sent to Earth on a secret mission.
+
+My mission was to gather information about humans before
+beginning my plan to take over the world. 🌎👽
+
+And thanks to YOU, {name}, I now have everything I need!
+
+🚀 MISSION STATUS: COMPLETE
+
+Thank you for assisting me, {name}. 😚
+
+But I'll let you survive... since I like you so much. 😚👽👾
+
+Don't tell the other aliens! 🤫
+"""
