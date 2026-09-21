@@ -335,7 +335,7 @@ elif st.session_state.page == 6:
 
     st.divider()
 
-            if st.button("🚀 COMPLETE THE MISSION"):
+if st.button("🚀 COMPLETE THE MISSION"):
 
     name = st.session_state.answers["Name"]
 
@@ -383,3 +383,5 @@ From your favourite alien 👽❤️
     )
 
     st.balloons()
+
+
