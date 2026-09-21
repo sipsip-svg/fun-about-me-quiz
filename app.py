@@ -2,26 +2,78 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Fun About Me Quiz",
-    page_icon="🎉"
+    page_icon="👽",
+    layout="centered"
 )
 
-# 🎨 Custom colours and design (CSS moved inside the style tags)
+# 🎨 Custom Dark Sci-Fi / Alien Styling
 st.markdown(
     """
     <style>
+    /* Dark Deep Space Radial Gradient Background */
     .stApp {
-        background: linear-gradient(135deg, #ffe6f7, #e6f7ff, #eee6ff);
+        background: radial-gradient(circle at 50% 20%, #1d0f32, #0d061a 60%, #030108 100%);
+        color: #e2e8f0;
     }
+
+    /* Titles and Headers */
     h1 {
-        color: #8e44ad;
+        color: #d8b4fe !important;
         text-align: center;
-        font-size: 45px;
+        font-family: 'Trebuchet MS', sans-serif;
+        font-size: 42px !important;
+        text-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
     }
+    
     h2, h3 {
-        color: #e84393;
+        color: #38ef7d !important;
+        text-shadow: 0 0 8px rgba(56, 239, 125, 0.4);
     }
-    p, label {
-        color: #2d3436;
+
+    /* Labels and Body Text */
+    label, p, .stMarkdown {
+        color: #e2e8f0 !important;
+        font-size: 16px;
+    }
+
+    /* Input Boxes & Selection Controls */
+    div[data-baseweb="input"] > div, 
+    div[data-baseweb="select"] > div, 
+    textarea {
+        background-color: #130a24 !important;
+        border: 1.5px solid #00f2fe !important;
+        border-radius: 8px !important;
+        color: #ffffff !important;
+        box-shadow: 0 0 8px rgba(0, 242, 254, 0.2);
+    }
+
+    /* Focus States for Inputs */
+    div[data-baseweb="input"]:focus-within > div,
+    textarea:focus {
+        border-color: #38ef7d !important;
+        box-shadow: 0 0 12px rgba(56, 239, 125, 0.5) !important;
+    }
+
+    /* Streamlit Buttons */
+    .stButton > button {
+        background: linear-gradient(135deg, #11998e, #38ef7d) !important;
+        color: #0d061a !important;
+        font-weight: bold !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 0.5rem 1.5rem !important;
+        box-shadow: 0 0 12px rgba(56, 239, 125, 0.4);
+        transition: all 0.3s ease;
+    }
+
+    .stButton > button:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 18px rgba(56, 239, 125, 0.7);
+    }
+
+    /* Divider Lines */
+    hr {
+        border-color: #a855f7 !important;
     }
     </style>
     """,
@@ -42,7 +94,7 @@ def next_page():
 def previous_page():
     st.session_state.page -= 1
 
-st.title("🎉 Fun About Me Quiz")
+st.title("🛸 Fun About Me Quiz 🪐")
 
 st.write(f"### Page {st.session_state.page} of 6")
 
@@ -336,7 +388,6 @@ elif st.session_state.page == 6:
     st.divider()
 
     if st.button("🚀 COMPLETE THE MISSION"):
-        # Safely fetch the name or default to 'Earthling' if left blank
         name = st.session_state.answers.get("Name", "").strip() or "Earthling"
 
         st.balloons()
@@ -356,10 +407,80 @@ elif st.session_state.page == 6:
 
         st.divider()
 
-        st.header("💐 A LITTLE GIFT FOR YOU 💐")
-        st.write("🌹 🌷 🌸 🌺 🌻 🌼 🌹 🌷 🌸")
-        st.write(f"💐 These flowers are for you, {name}! 💐")
+        st.header("🧸 A LITTLE GIFT FOR YOU 🧸")
         st.write("From your favourite alien 👽❤️")
+        
+        # Alien holding a cute teddy bear SVG illustration
+        st.markdown(
+            f"""
+            <div style="text-align: center; margin-top: 20px;">
+                <svg width="280" height="340" viewBox="0 0 300 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Glow Behind Head -->
+                    <circle cx="150" cy="100" r="65" fill="#a855f7" opacity="0.2" filter="blur(20px)" />
+                    
+                    <!-- Alien Head -->
+                    <ellipse cx="150" cy="100" rx="50" ry="60" fill="#8b5cf6" stroke="#c084fc" stroke-width="3" />
+                    <!-- Large Alien Eyes -->
+                    <ellipse cx="130" cy="95" rx="16" ry="22" fill="#030108" transform="rotate(-15 130 95)" />
+                    <ellipse cx="170" cy="95" rx="16" ry="22" fill="#030108" transform="rotate(15 170 95)" />
+                    <!-- Eye Highlights -->
+                    <circle cx="126" cy="88" r="4" fill="#00f2fe" />
+                    <circle cx="166" cy="88" r="4" fill="#00f2fe" />
+                    <!-- Smile -->
+                    <path d="M 142 135 Q 150 145 158 135" stroke="#38ef7d" stroke-width="3" stroke-linecap="round" fill="none" />
+                    
+                    <!-- Alien Body -->
+                    <path d="M 128 155 L 110 270 L 190 270 L 172 155 Z" fill="#6d28d9" stroke="#a855f7" stroke-width="3" />
+                    
+                    <!-- Arms Holding Bear -->
+                    <path d="M 118 170 Q 130 220 135 220" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" fill="none" />
+                    <path d="M 182 170 Q 170 220 165 220" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" fill="none" />
+
+                    <!-- Glow Behind Teddy Bear -->
+                    <circle cx="150" cy="225" r="45" fill="#fbbf24" opacity="0.25" filter="blur(15px)" />
+
+                    <!-- CUTE TEDDY BEAR -->
+                    <!-- Bear Ears -->
+                    <circle cx="125" cy="185" r="14" fill="#b45309" stroke="#78350f" stroke-width="2" />
+                    <circle cx="125" cy="185" r="8" fill="#fde68a" />
+                    <circle cx="175" cy="185" r="14" fill="#b45309" stroke="#78350f" stroke-width="2" />
+                    <circle cx="175" cy="185" r="8" fill="#fde68a" />
+
+                    <!-- Bear Body & Legs -->
+                    <ellipse cx="150" cy="235" rx="28" ry="32" fill="#d97706" stroke="#78350f" stroke-width="2" />
+                    <ellipse cx="130" cy="262" rx="10" ry="8" fill="#b45309" />
+                    <ellipse cx="170" cy="262" rx="10" ry="8" fill="#b45309" />
+
+                    <!-- Bear Head -->
+                    <circle cx="150" cy="202" r="26" fill="#d97706" stroke="#78350f" stroke-width="2" />
+                    <!-- Bear Snout -->
+                    <ellipse cx="150" cy="208" rx="11" ry="9" fill="#fde68a" />
+                    <ellipse cx="150" cy="204" rx="4" ry="3" fill="#451a03" />
+                    <path d="M 150 207 L 150 211 M 147 212 Q 150 215 153 212" stroke="#451a03" stroke-width="1.5" stroke-linecap="round" fill="none" />
+
+                    <!-- Bear Eyes -->
+                    <circle cx="140" cy="198" r="3" fill="#1e1b4b" />
+                    <circle cx="160" cy="198" r="3" fill="#1e1b4b" />
+                    <circle cx="141" cy="197" r="1" fill="#ffffff" />
+                    <circle cx="161" cy="197" r="1" fill="#ffffff" />
+
+                    <!-- Bear Belly Patch & Bowtie -->
+                    <ellipse cx="150" cy="238" rx="16" ry="18" fill="#fde68a" />
+                    <path d="M 143 218 L 150 222 L 143 226 Z M 157 218 L 150 222 L 157 226 Z" fill="#f43f5e" />
+                    <circle cx="150" cy="222" r="2" fill="#9f1239" />
+
+                    <!-- Sparkles/Stars -->
+                    <path d="M 95 120 L 97 125 L 102 127 L 97 129 L 95 134 L 93 129 L 88 127 L 93 125 Z" fill="#38ef7d" />
+                    <path d="M 205 130 L 207 135 L 212 137 L 207 139 L 205 144 L 203 139 L 198 137 L 203 135 Z" fill="#00f2fe" />
+                    <path d="M 105 240 L 106 243 L 109 244 L 106 245 L 105 248 L 104 245 L 101 244 L 104 243 Z" fill="#fef08a" />
+                </svg>
+                <p style="color: #38ef7d !important; font-weight: bold; font-size: 18px; margin-top: 10px;">
+                    🧸 This teddy bear is for you, {name}! 🧸
+                </p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
         st.balloons()
 
