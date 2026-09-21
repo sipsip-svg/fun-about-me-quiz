@@ -410,74 +410,53 @@ elif st.session_state.page == 6:
         st.header("🧸 A LITTLE GIFT FOR YOU 🧸")
         st.write("From your favourite alien 👽❤️")
         
-        # Alien holding a cute teddy bear SVG illustration
+        # Clean SVG HTML block without raw comments or string escaping issues
+        alien_svg = """
+        <div style="text-align: center; margin-top: 20px;">
+            <svg width="280" height="340" viewBox="0 0 300 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="150" cy="100" r="65" fill="#a855f7" opacity="0.2" filter="blur(20px)" />
+                <ellipse cx="150" cy="100" rx="50" ry="60" fill="#8b5cf6" stroke="#c084fc" stroke-width="3" />
+                <ellipse cx="130" cy="95" rx="16" ry="22" fill="#030108" transform="rotate(-15 130 95)" />
+                <ellipse cx="170" cy="95" rx="16" ry="22" fill="#030108" transform="rotate(15 170 95)" />
+                <circle cx="126" cy="88" r="4" fill="#00f2fe" />
+                <circle cx="166" cy="88" r="4" fill="#00f2fe" />
+                <path d="M 142 135 Q 150 145 158 135" stroke="#38ef7d" stroke-width="3" stroke-linecap="round" fill="none" />
+                <path d="M 128 155 L 110 270 L 190 270 L 172 155 Z" fill="#6d28d9" stroke="#a855f7" stroke-width="3" />
+                <path d="M 118 170 Q 130 220 135 220" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" fill="none" />
+                <path d="M 182 170 Q 170 220 165 220" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" fill="none" />
+                <circle cx="150" cy="225" r="45" fill="#fbbf24" opacity="0.25" filter="blur(15px)" />
+                <circle cx="125" cy="185" r="14" fill="#b45309" stroke="#78350f" stroke-width="2" />
+                <circle cx="125" cy="185" r="8" fill="#fde68a" />
+                <circle cx="175" cy="185" r="14" fill="#b45309" stroke="#78350f" stroke-width="2" />
+                <circle cx="175" cy="185" r="8" fill="#fde68a" />
+                <ellipse cx="150" cy="235" rx="28" ry="32" fill="#d97706" stroke="#78350f" stroke-width="2" />
+                <ellipse cx="130" cy="262" rx="10" ry="8" fill="#b45309" />
+                <ellipse cx="170" cy="262" rx="10" ry="8" fill="#b45309" />
+                <circle cx="150" cy="202" r="26" fill="#d97706" stroke="#78350f" stroke-width="2" />
+                <ellipse cx="150" cy="208" rx="11" ry="9" fill="#fde68a" />
+                <ellipse cx="150" cy="204" rx="4" ry="3" fill="#451a03" />
+                <path d="M 150 207 L 150 211 M 147 212 Q 150 215 153 212" stroke="#451a03" stroke-width="1.5" stroke-linecap="round" fill="none" />
+                <circle cx="140" cy="198" r="3" fill="#1e1b4b" />
+                <circle cx="160" cy="198" r="3" fill="#1e1b4b" />
+                <circle cx="141" cy="197" r="1" fill="#ffffff" />
+                <circle cx="161" cy="197" r="1" fill="#ffffff" />
+                <ellipse cx="150" cy="238" rx="16" ry="18" fill="#fde68a" />
+                <path d="M 143 218 L 150 222 L 143 226 Z M 157 218 L 150 222 L 157 226 Z" fill="#f43f5e" />
+                <circle cx="150" cy="222" r="2" fill="#9f1239" />
+                <path d="M 95 120 L 97 125 L 102 127 L 97 129 L 95 134 L 93 129 L 88 127 L 93 125 Z" fill="#38ef7d" />
+                <path d="M 205 130 L 207 135 L 212 137 L 207 139 L 205 144 L 203 139 L 198 137 L 203 135 Z" fill="#00f2fe" />
+                <path d="M 105 240 L 106 243 L 109 244 L 106 245 L 105 248 L 104 245 L 101 244 L 104 243 Z" fill="#fef08a" />
+            </svg>
+        </div>
+        """
+        
+        st.markdown(alien_svg, unsafe_allow_html=True)
+        
         st.markdown(
             f"""
-            <div style="text-align: center; margin-top: 20px;">
-                <svg width="280" height="340" viewBox="0 0 300 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Glow Behind Head -->
-                    <circle cx="150" cy="100" r="65" fill="#a855f7" opacity="0.2" filter="blur(20px)" />
-                    
-                    <!-- Alien Head -->
-                    <ellipse cx="150" cy="100" rx="50" ry="60" fill="#8b5cf6" stroke="#c084fc" stroke-width="3" />
-                    <!-- Large Alien Eyes -->
-                    <ellipse cx="130" cy="95" rx="16" ry="22" fill="#030108" transform="rotate(-15 130 95)" />
-                    <ellipse cx="170" cy="95" rx="16" ry="22" fill="#030108" transform="rotate(15 170 95)" />
-                    <!-- Eye Highlights -->
-                    <circle cx="126" cy="88" r="4" fill="#00f2fe" />
-                    <circle cx="166" cy="88" r="4" fill="#00f2fe" />
-                    <!-- Smile -->
-                    <path d="M 142 135 Q 150 145 158 135" stroke="#38ef7d" stroke-width="3" stroke-linecap="round" fill="none" />
-                    
-                    <!-- Alien Body -->
-                    <path d="M 128 155 L 110 270 L 190 270 L 172 155 Z" fill="#6d28d9" stroke="#a855f7" stroke-width="3" />
-                    
-                    <!-- Arms Holding Bear -->
-                    <path d="M 118 170 Q 130 220 135 220" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" fill="none" />
-                    <path d="M 182 170 Q 170 220 165 220" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" fill="none" />
-
-                    <!-- Glow Behind Teddy Bear -->
-                    <circle cx="150" cy="225" r="45" fill="#fbbf24" opacity="0.25" filter="blur(15px)" />
-
-                    <!-- CUTE TEDDY BEAR -->
-                    <!-- Bear Ears -->
-                    <circle cx="125" cy="185" r="14" fill="#b45309" stroke="#78350f" stroke-width="2" />
-                    <circle cx="125" cy="185" r="8" fill="#fde68a" />
-                    <circle cx="175" cy="185" r="14" fill="#b45309" stroke="#78350f" stroke-width="2" />
-                    <circle cx="175" cy="185" r="8" fill="#fde68a" />
-
-                    <!-- Bear Body & Legs -->
-                    <ellipse cx="150" cy="235" rx="28" ry="32" fill="#d97706" stroke="#78350f" stroke-width="2" />
-                    <ellipse cx="130" cy="262" rx="10" ry="8" fill="#b45309" />
-                    <ellipse cx="170" cy="262" rx="10" ry="8" fill="#b45309" />
-
-                    <!-- Bear Head -->
-                    <circle cx="150" cy="202" r="26" fill="#d97706" stroke="#78350f" stroke-width="2" />
-                    <!-- Bear Snout -->
-                    <ellipse cx="150" cy="208" rx="11" ry="9" fill="#fde68a" />
-                    <ellipse cx="150" cy="204" rx="4" ry="3" fill="#451a03" />
-                    <path d="M 150 207 L 150 211 M 147 212 Q 150 215 153 212" stroke="#451a03" stroke-width="1.5" stroke-linecap="round" fill="none" />
-
-                    <!-- Bear Eyes -->
-                    <circle cx="140" cy="198" r="3" fill="#1e1b4b" />
-                    <circle cx="160" cy="198" r="3" fill="#1e1b4b" />
-                    <circle cx="141" cy="197" r="1" fill="#ffffff" />
-                    <circle cx="161" cy="197" r="1" fill="#ffffff" />
-
-                    <!-- Bear Belly Patch & Bowtie -->
-                    <ellipse cx="150" cy="238" rx="16" ry="18" fill="#fde68a" />
-                    <path d="M 143 218 L 150 222 L 143 226 Z M 157 218 L 150 222 L 157 226 Z" fill="#f43f5e" />
-                    <circle cx="150" cy="222" r="2" fill="#9f1239" />
-
-                    <!-- Sparkles/Stars -->
-                    <path d="M 95 120 L 97 125 L 102 127 L 97 129 L 95 134 L 93 129 L 88 127 L 93 125 Z" fill="#38ef7d" />
-                    <path d="M 205 130 L 207 135 L 212 137 L 207 139 L 205 144 L 203 139 L 198 137 L 203 135 Z" fill="#00f2fe" />
-                    <path d="M 105 240 L 106 243 L 109 244 L 106 245 L 105 248 L 104 245 L 101 244 L 104 243 Z" fill="#fef08a" />
-                </svg>
-                <p style="color: #38ef7d !important; font-weight: bold; font-size: 18px; margin-top: 10px;">
-                    🧸 This teddy bear is for you, {name}! 🧸
-                </p>
-            </div>
+            <p style="text-align: center; color: #38ef7d !important; font-weight: bold; font-size: 18px; margin-top: 10px;">
+                🧸 This teddy bear is for you, {name}! 🧸
+            </p>
             """,
             unsafe_allow_html=True
         )
